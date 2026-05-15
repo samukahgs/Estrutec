@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SFI Solutions-Contato</title>
-    <link rel="stylesheet" href="Contato.css">
+    <title><?php $nomeEmpresa ?></title>
+    <link rel="stylesheet" href="./styles/styleContato.css">
 </head>
 <body>
     <section class="secao-contato">

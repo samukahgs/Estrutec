@@ -14,7 +14,8 @@ require_once 'init.php';
         require_once 'partials/header.php';
     ?>
     <main>
-
+        <a href="./area-admin/login.php">AREA ADMIN</a>
+        <a href="./contato.php">CONTATO</a>
     </main>
     <?php 
         require_once 'partials/footer.php';

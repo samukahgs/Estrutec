@@ -32,11 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { /*se o servidor receber um método 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConstruTech - Estoque</title>
+    <title>Estrutec - Estoque</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <?php require_once 'partials/header.php'; ?>
+  <?php require_once './partials/header.php'; ?>
 
   <main class="pagina-estoque">
 
