@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Archivo', sans-serif;
+    background-color: #0B2240;
+    color: #F8F9FA;
+    line-height: 1.5;
+}
+
+.site-header {
+    background-color: #0B2240;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #16B2D4;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-header__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-principal ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-principal a {
+    color: #F8F9FA;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-principal a:hover {
+    color: #16B2D4;
+}
+
+main {
+    max-width: 1280px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.produto-card {
+    background-color: #132A4A;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.produto-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #1E3A5F;
+}
+
+.produto-card h3 {
+    font-size: 1.2rem;
+    margin: 1rem 1rem 0.5rem;
+    color: #16B2D4;
+}
+
+.produto-card p {
+    font-size: 0.9rem;
+    margin: 0 1rem 1rem;
+    color: #C0D0E8;
+}
+
+.preco {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #F8F9FA;
+    margin: 0 1rem 1rem;
+}
+
+.btn-comprar {
+    display: block;
+    background-color: #16B2D4;
+    color: #0B2240;
+    text-align: center;
+    padding: 0.7rem;
+    margin: 0 1rem 1rem;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+
+.btn-comprar:hover {
+    background-color: #0E8BA8;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 3rem auto;
+    background-color: #132A4A;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #16B2D4;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #1E3A5F;
+    color: #F8F9FA;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid #16B2D4;
+}
+
+button[type="submit"], .btn {
+    background-color: #16B2D4;
+    color: #0B2240;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 40px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0E8BA8;
+}
+
+.erro {
+    color: #FF6B6B;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.site-footer {
+    background-color: #07162C;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid #16B2D4;
+    color: #A0AEC0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .site-header__inner {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav-principal ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+}

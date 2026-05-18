@@ -1,13 +1,20 @@
 <header class="site-header">
     <div class="site-header__inner">
-      <a class="logo" href="index.php"><?php print $nomeLoja; ?></a>
-      <nav class="nav-principal" aria-label="Principal">
-        <ul>
-          <li><a href="index.php">Início</a></li>
-          <li><a href="produtos.php">Produtos</a></li>
-          <li><a href="cadastro-produto.php">Cadastro de produto</a></li>
-          <li><a href="contato.php">Contato</a></li>
-        </ul>
-      </nav>
+        <a href="index.php" class="logo">
+            <img src="imagens/logoEstrutec.png" alt="Estrutec">
+        </a>
+        <nav class="nav-principal">
+            <ul>
+                <li><a href="index.php">Produtos</a></li>
+                <li><a href="sobre.php">Sobre Nós</a></li>
+                <li><a href="contato.php">Contato</a></li>
+                <?php if (isset($_SESSION['id_login'])): ?>
+                    <li><a href="meus-pedidos.php">Meus Pedidos</a></li>
+                    <li><a href="logout.php">Sair</a></li>
+                <?php else: ?>
+                    <li><a href="login.php">Login</a></li>
+                <?php endif; ?>
+            </ul>
+        </nav>
     </div>
-  </header>
+</header>

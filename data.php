@@ -1,3 +1,0 @@
-<?php 
-$nomeEmpresa = "Estrutec";
-?>

@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Archivo', sans-serif;
+    background-color: #0B2240;
+    color: #F8F9FA;
+    display: flex;
+}
+
+.admin-sidebar {
+    width: 260px;
+    background-color: #07162C;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    padding: 2rem 1rem;
+    border-right: 1px solid #16B2D4;
+}
+
+.admin-sidebar .logo img {
+    width: 100%;
+    max-width: 180px;
+    margin-bottom: 2rem;
+}
+
+.admin-sidebar nav ul {
+    list-style: none;
+}
+
+.admin-sidebar nav li {
+    margin-bottom: 0.5rem;
+}
+
+.admin-sidebar nav a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #C0D0E8;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.admin-sidebar nav a:hover,
+.admin-sidebar nav a.active {
+    background-color: #16B2D4;
+    color: #0B2240;
+}
+
+.admin-main {
+    flex: 1;
+    padding: 2rem;
+    overflow-x: auto;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: #132A4A;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    border-left: 5px solid #16B2D4;
+}
+
+.card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #A0AEC0;
+}
+
+.card .valor {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #16B2D4;
+}
+
+.table-container {
+    overflow-x: auto;
+    background-color: #132A4A;
+    border-radius: 12px;
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid #1E3A5F;
+}
+
+th {
+    background-color: #07162C;
+    color: #16B2D4;
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background-color: #1E3A5F;
+}
+
+.btn-acao {
+    background-color: #16B2D4;
+    border: none;
+    color: #0B2240;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 2px;
+}
+
+.btn-lixeira {
+    background-color: #1F2937;
+    color: white;
+}
+
+.filtros {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.filtro-tag {
+    background-color: transparent;
+    border: 1px solid #16B2D4;
+    padding: 6px 16px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: #F8F9FA;
+    transition: 0.2s;
+}
+
+.filtro-tag.ativo, .filtro-tag:hover {
+    background-color: #16B2D4;
+    color: #0B2240;
+}
+
+.form-admin {
+    max-width: 600px;
+    background-color: #132A4A;
+    padding: 2rem;
+    border-radius: 16px;
+}
+
+.form-admin label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+}
+
+.form-admin input, .form-admin select, .form-admin textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #1E3A5F;
+    color: white;
+}
+
+.form-admin button {
+    margin-top: 1.5rem;
+    background-color: #16B2D4;
+    color: #0B2240;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}

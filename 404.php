@@ -1,6 +1,16 @@
-<?php
-require_once 'init.php';
-//require_once 'partials/header.php';
-print '<h1>404 - Página não encontrada!!!</h1>';
-print '<a href="index.php">Voltar</a>';
-//require_once 'partials/footer.php';
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página não encontrada - Estrutec</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<?php include 'partials/header.php'; ?>
+<main style="text-align:center;">
+    <h1>404 - Página não encontrada</h1>
+    <p>A página que você procura não existe.</p>
+    <a href="index.php" class="btn">Voltar para a loja</a>
+</main>
+<?php include 'partials/footer.php'; ?>
+</body>
+</html>
