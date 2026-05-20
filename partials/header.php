@@ -5,7 +5,7 @@
         </a>
         <nav class="nav-principal">
             <ul>
-                <li><a href="index.php">Produtos</a></li>
+                <li><a href="produtos.php">Produtos</a></li>
                 <li><a href="sobre.php">Sobre Nós</a></li>
                 <li><a href="contato.php">Contato</a></li>
                 <?php if (isset($_SESSION['id_login'])): ?>
