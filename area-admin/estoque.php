@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="styles/admin-style.css">
 </head>
 <body>
-    <?php require_once '../partials/header.php'; ?>
+    <?php require_once 'partials/header.php'; ?>
     <main class="pagina-estoque">
 
         <div class="estoque-filtros">

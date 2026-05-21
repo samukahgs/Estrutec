@@ -126,8 +126,11 @@ main .categorias {
 .produtos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 8rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 .produto-card {
     background-color: #132A4A;
@@ -135,6 +138,7 @@ main .categorias {
     overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    text-align: center;
 }
 .produto-card:hover {
     transform: translateY(-5px);
@@ -158,6 +162,12 @@ main .categorias {
     font-size: 0.9rem;
     margin: 0 1rem 1rem;
     color: #C0D0E8;
+}
+
+.produto-card a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    
 }
 
 .preco {
@@ -280,6 +290,10 @@ button[type="submit"]:hover {
     gap:10px;
     margin-bottom:30px;
     flex-wrap:wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
 .filtro-btn{
@@ -293,4 +307,12 @@ button[type="submit"]:hover {
 
 .filtro-btn:hover{
     background:#16B2D4;
+}
+
+.titulo-produtos{
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 2rem auto;
+    padding: 0 1rem;
 }

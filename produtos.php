@@ -51,7 +51,7 @@ $categorias = $stmtCategorias->fetchAll(PDO::FETCH_ASSOC);
 
 <main>
 
-    <h1>Nossos Produtos</h1>
+    <h1 class="titulo-produtos">Nossos Produtos</h1>
 
     <!-- FILTROS -->
     <div class="filtros">
@@ -78,7 +78,8 @@ $categorias = $stmtCategorias->fetchAll(PDO::FETCH_ASSOC);
 
         <?php foreach ($produtos as $p): ?>
 
-            <div class="produto-card">
+            <a href="carrinho.php?add=<?= $p['id'] ?>"
+                >  <div class="produto-card"> 
 
                 <img
                     src="imagens/<?= htmlspecialchars($p['imagem'] ?: 'produto-padrao.jpg') ?>"
@@ -100,15 +101,10 @@ $categorias = $stmtCategorias->fetchAll(PDO::FETCH_ASSOC);
                 <span class="preco">
                     R$ <?= number_format($p['preco'], 2, ',', '.') ?>
                 </span>
-
-                <a
-                    href="carrinho.php?add=<?= $p['id'] ?>"
-                    class="btn-comprar"
-                >
-                    Comprar
-                </a>
+                
 
             </div>
+            
 
         <?php endforeach; ?>
 
