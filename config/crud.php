@@ -41,6 +41,16 @@ function read($pdo, $table, $where) {
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
+// READ CATEGORIA
+function readCategoria($pdo, $table, $where = null) {
+    $sql = "SELECT categoria FROM $table";
+    if ($where) {
+        $sql .= " WHERE $where";
+    }
+    $stmt = $pdo->query($sql);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 // UPDATE
 function update($pdo, $table, array $data, $where) {
     $set = [];
