@@ -160,6 +160,26 @@ main .categorias {
     color: #C0D0E8;
 }
 
+.filtros{
+    display:flex;
+    gap:10px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.filtro-btn{
+    padding:10px 16px;
+    background:#1E3A5F;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.filtro-btn:hover{
+    background:#16B2D4;
+}
+
 .preco {
     display: block;
     font-size: 1.3rem;
