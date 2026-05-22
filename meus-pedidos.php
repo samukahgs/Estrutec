@@ -1,7 +1,12 @@
 <?php
 require_once 'config/crud.php';
 session_start();
-if (!isset($_SESSION['id_login'])) header('Location: login.php');
+
+if (!isset($_SESSION['id_login']) || $_SESSION['papel'] !== 'cliente') {
+    header('Location: login.php');
+    exit;
+}
+
 $id = $_SESSION['id_login'];
 $pedidos = readAll($pdo, 'pedidos', "id_login = $id ORDER BY data_pedido DESC");
 ?>
