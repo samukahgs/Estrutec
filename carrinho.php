@@ -2,6 +2,12 @@
 require_once 'config/crud.php';
 session_start();
 
+// Apenas clientes logados podem acessar o carrinho
+if (!isset($_SESSION['id_login']) || $_SESSION['papel'] !== 'cliente') {
+    header('Location: login.php');
+    exit;
+}
+
 // Adicionar ao carrinho
 if (isset($_GET['add'])) {
     $id = (int)$_GET['add'];
