@@ -1,6 +1,6 @@
 <div class="admin-sidebar">
     <div class="logo">
-        <img src="../imagens/logoEstrutec.png" alt="Estrutec">
+        <a href="../index.php"><img src="../imagens/logoEstrutec.png" alt="Estrutec"></a>
     </div>
     <nav>
         <ul>

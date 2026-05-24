@@ -36,11 +36,11 @@ if (isset($_GET['edit_id'])) {
 <head>
     <meta charset="UTF-8">
     <title>Estrutec - Estoque</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="styles/admin-style.css">
 </head>
 <body>
-<?php include 'partials/header.php'; ?>
+    <?php include 'partials/header.php'; ?>
 <div class="admin-main">
     <div class="estoque-filtros">
         <img src="../icones/Filter.png" alt="Filtrar" class="icone-filtro">
@@ -83,42 +83,68 @@ if (isset($_GET['edit_id'])) {
             <input type="number" name="quantidade" value="<?= $editProduto['quantidade'] ?>" required>
 
             <button type="submit">Salvar alterações</button>
-            <a href="estoque.php<?= $categoriaFiltro ? "?categoria=$categoriaFiltro" : '' ?>" class="btn" style="display:inline-block; margin-top:1rem; background:#6c757d;">Cancelar</a>
+            <a href="estoque.php<?= $categoriaFiltro ? "?categoria=$categoriaFiltro" : '' ?>" class="btn" >Cancelar</a>
         </form>
     </div>
     <?php endif; ?>
 
     <!-- TABELA DE PRODUTOS -->
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr><th>Cód.</th><th>Item</th><th>Categoria</th><th>Quantidade</th><th>Preço Unit.</th><th>Total</th><th>Ações</th></tr>
-            </thead>
-            <tbody>
-            <?php foreach ($produtos as $produto): ?>
+    <!-- TABELA DE PRODUTOS -->
+<?php if (!$editProduto): ?>
+<div class="table-container">
+    <table>
+        <thead>
             <tr>
-                <td><?= $produto['id'] ?></td>
-                <td><?= htmlspecialchars($produto['item']) ?></td>
-                <td><?= htmlspecialchars($produto['categoria']) ?></td>
-                <td style="color: <?= $produto['quantidade'] <= 0 ? '#EF4444' : ($produto['quantidade'] <= 30 ? '#FBBF24' : '#D0D8E8') ?>; font-weight: <?= $produto['quantidade'] <= 0 ? 'bold' : 'normal' ?>">
-                    <?= $produto['quantidade'] ?>
-                </td>
-                <td>R$ <?= number_format($produto['preco'], 2, ',', '.') ?></td>
-                <td>R$ <?= number_format($produto['quantidade'] * $produto['preco'], 2, ',', '.') ?></td>
-                <td class="acoes">
-                    <form method="POST" style="display:inline;">
-                        <input type="hidden" name="id" value="<?= $produto['id']; ?>">
-                        <button type="submit" name="acao" value="add" class="btn-acao btn-add">+</button>
-                        <button type="submit" name="acao" value="remove" class="btn-acao btn-remove">-</button>
-                        <button type="submit" name="lixeira" class="btn-acao btn-lixeira">🗑️</button>
-                    </form>
-                    <a href="estoque.php?edit_id=<?= $produto['id'] . ($categoriaFiltro ? "&categoria=$categoriaFiltro" : '') ?>" class="btn-acao" style="text-decoration:none; background:#16B2D4; padding:0.2rem 0.6rem; border-radius:20px;">✏️</a>
-                </td>
+                <th>Cód.</th>
+                <th>Item</th>
+                <th>Categoria</th>
+                <th>Quantidade</th>
+                <th>Preço Unit.</th>
+                <th>Total</th>
+                <th>Ações</th>
             </tr>
-            <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
+        </thead>
+
+        <tbody>
+        <?php foreach ($produtos as $produto): ?>
+        <tr>
+            <td><?= $produto['id'] ?></td>
+            <td><?= htmlspecialchars($produto['item']) ?></td>
+            <td><?= htmlspecialchars($produto['categoria']) ?></td>
+
+            <td style="color: <?= $produto['quantidade'] <= 0 ? '#EF4444' : ($produto['quantidade'] <= 30 ? '#FBBF24' : '#D0D8E8') ?>;">
+                <?= $produto['quantidade'] ?>
+            </td>
+
+            <td>R$ <?= number_format($produto['preco'], 2, ',', '.') ?></td>
+
+            <td>
+                R$ <?= number_format($produto['quantidade'] * $produto['preco'], 2, ',', '.') ?>
+            </td>
+
+            <td class="acoes">
+                <form method="POST" style="display:inline;">
+                    <input type="hidden" name="id" value="<?= $produto['id']; ?>">
+
+                    <button type="submit" name="acao" value="add" class="btn-acao btn-add">+</button>
+
+                    <button type="submit" name="acao" value="remove" class="btn-acao btn-remove">-</button>
+
+                    <button type="submit" name="lixeira" class="btn-acao btn-lixeira">Excluir</button>
+                </form>
+
+                <a href="estoque.php?edit_id=<?= $produto['id'] . ($categoriaFiltro ? "&categoria=$categoriaFiltro" : '') ?>"
+                   class="btn-acao"
+                   style="text-decoration:none; background:#1f293700; padding:0.2rem 0.6rem; border-radius:20px;">
+                   Editar
+                </a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+<?php endif; ?>
 
     <div class="estoque-rodape">
         <div class="rodape-item"><span class="rodape-label">Valor Total em Estoque:</span><span class="rodape-valor">R$ <?= number_format(array_sum(array_map(fn($p)=>$p['quantidade']*$p['preco'], $produtos)), 2, ',', '.') ?></span></div>
