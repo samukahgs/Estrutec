@@ -25,7 +25,6 @@ body {
 }
 .admin-sidebar .logo img {
     width: 100%;
-    max-width: 180px;
     margin-bottom: 2rem;
 }
 .admin-sidebar nav ul {
@@ -176,8 +175,23 @@ tbody td {
     color: #fff;
 }
 .btn-lixeira {
-    background-color: #1F2937;
+    background-color: #1f293700;
     color: #fff;
+}
+
+.btn {
+    display:inline-block; margin-top:1rem; 
+    background: #dadada;
+    border-radius: 40px ;
+    text-decoration:none; 
+    color: #20242b;  
+    padding-top:10px;
+    padding-bottom:10px;padding-left:237px;
+    padding-right:237px;  
+}
+
+.btn:hover{
+    background-color: #bdbdbd;
 }
 
 /* ===== RODAPÉ DO ESTOQUE (TOTAIS) ===== */
